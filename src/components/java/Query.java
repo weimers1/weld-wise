@@ -38,7 +38,7 @@ public class Query {
             // get results metadata
             ResultSetMetaData resultSetMetaData = resultSet.getMetaData();
 
-            // loop over results to print data
+            // loop over results to store data
             while (resultSet.next()) {
                 HashMap<String, String> row = new HashMap<String, String>();
                 for (int i = 1; i <= resultSetMetaData.getColumnCount(); i++) {
