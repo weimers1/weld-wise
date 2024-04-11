@@ -1,0 +1,6 @@
+/* change size of logo in the navbar */
+.navbar-brand {
+	width: 13%;
+	padding: 0 !important;
+	margin: 0 !important;
+}

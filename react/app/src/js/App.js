@@ -1,13 +1,12 @@
-import Question from "./components/Question.js";
+import "../css/main.css";
+import NavBar from "./components/NavBar.js";
 
 function App() {
 	return (
 		<div className="App">
-			<header className="App-header">
-				<div className="container">
-					<Question></Question>
-				</div>
-			</header>
+			<div className="container">
+				<NavBar></NavBar>
+			</div>
 		</div>
 	);
 }

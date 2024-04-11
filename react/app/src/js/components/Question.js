@@ -45,10 +45,16 @@ function getAnswerChoices() {
 
 export function Question() {
 	return (
-		<div className="row">
-			{question_data.text}
-			<ul className="list-group">{getAnswerChoices()}</ul>
-		</div>
+		<>
+			<div className="row pt-2">
+				<div className="col-xs-12">{question_data.text}</div>
+			</div>
+			<div className="row pb-2">
+				<div className="col-xs-12">
+					<ul className="list-group">{getAnswerChoices()}</ul>
+				</div>
+			</div>
+		</>
 	);
 }
 
