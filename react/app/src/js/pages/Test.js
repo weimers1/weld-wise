@@ -1,13 +1,18 @@
-import Question from "../components/Question.js";
+import Question from "../components/Question";
 
-export function Test() {
+export function Test({ userInfo }) {
+	console.log(userInfo);
+	if (!userInfo.loggedIn) {
+		return (
+			<div className="alert alert-info">
+				You must be logged in to access the test.
+			</div>
+		);
+	}
+
 	return (
 		<>
-			<div className="row">
-				<div className="col-xs-12">this is the testing page</div>
-			</div>
-
-			<Question></Question>
+			<Question />
 
 			<div className="row float-end">
 				<div className="col-xs-12">

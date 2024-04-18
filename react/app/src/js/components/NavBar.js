@@ -1,20 +1,32 @@
-import Home from "../pages/Home.js";
-import Test from "../pages/Test.js";
+// pages
+import Home from "../pages/Home";
+import Test from "../pages/Test";
 import Faq from "../pages/Faq";
+import UserSettings from "../pages/UserSettings";
+import PageNotFound from "../pages/PageNotFound";
 
-import logo from "../../images/weld-wise.png";
+// components
+import LoginOptions from "./LoginOptions";
+import LoginModal from "./LoginModal";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
-const user_info = {
-	name: "Sam Weimer",
-};
+// inserts
+import logo from "../../images/weld-wise.png";
+import { useState } from "react";
 
 export function NavBar() {
+	const [userInfo, setUserInfo] = useState({
+		loggedIn: true, // later change to check login status server side
+		name: "Sam Weimer",
+		userId: 123,
+	});
+
 	return (
 		<>
+			{/* user BrowserRouter to capture Links to other pages */}
 			<BrowserRouter>
 				<nav className="navbar navbar-expand-lg navbar-light bg-light">
-					<Link className="nav-link navbar-brand" to={"/"}>
+					<Link className="nav-link navbar-brand ps-2" to={"/"}>
 						<img src={logo} className="img-fluid" lt="Weld WISE" />
 					</Link>
 					<button
@@ -35,28 +47,60 @@ export function NavBar() {
 						<ul className="navbar-nav">
 							<li className="nav-item">
 								<Link className="nav-link" to={"/"}>
-									Home
+									<i className="bi bi-house-fill"></i> Home
 								</Link>
 							</li>
 							<li className="nav-item">
 								<Link className="nav-link" to={"/faq"}>
+									<i className="bi bi-question-circle-fill"></i>{" "}
 									FAQ
 								</Link>
 							</li>
 							<li className="nav-item">
 								<Link className="nav-link" to={"/test"}>
+									<i className="bi bi-clipboard-check-fill"></i>{" "}
 									Test
 								</Link>
 							</li>
 						</ul>
+						<ul className="navbar-nav ms-auto">
+							<LoginOptions
+								clickedLogOut={() => {
+									setUserInfo({
+										...userInfo,
+										loggedIn: false,
+									});
+								}}
+								userInfo={userInfo}
+							/>
+						</ul>
 					</div>
 				</nav>
+
+				{/* navbar routes with paths from BrowserRouter's Links */}
 				<Routes>
 					<Route path="/" element={<Home />} />
 					<Route path="/faq" element={<Faq />} />
-					<Route path="/test" element={<Test />} />
+					<Route
+						path="/test"
+						element={<Test userInfo={userInfo} />}
+					/>
+					<Route path="/user/settings" element={<UserSettings />} />
+
+					{/* use star to capture all paths not recognized */}
+					<Route path="*" element={<PageNotFound />} />
 				</Routes>
 			</BrowserRouter>
+
+			<LoginModal
+				clickedLogIn={() => {
+					// validate credentials in backend later
+					setUserInfo({
+						...userInfo,
+						loggedIn: true,
+					});
+				}}
+			/>
 		</>
 	);
 }
