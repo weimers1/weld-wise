@@ -1,10 +1,50 @@
-/* change size of logo in the navbar */
-.navbar-brand {
-	width: 13%;
-	padding: 0 !important;
-	margin: 0 !important;
+/* custom colors */
+.bg-ww-dark {
+	background-color: #1a60a7 !important;
 }
 
-.profile-image {
-	width: 5%;
+.border-ww-dark {
+	border-color: #1a60a7 !important;
+}
+
+.bg-light-grey {
+	background-color: #ececec !important;
+}
+
+.border-light-grey {
+	border-color: #ececec;
+}
+
+.bg-ww-light {
+	background-color: #4491dd;
+}
+
+.bg-ww-orange {
+	background-color: #e06227 !important;
+}
+
+.btn-ww {
+	background-color: #1a60a7 !important;
+	border-color: #1a60a7 !important;
+	color: #ffffff !important;
+}
+
+.btn-ww:hover,
+.btn-ww:active,
+.btn-ww:visited {
+	background-color: #144d86 !important;
+	border-color: #144d86 !important;
+	color: #ffffff;
+}
+
+/* change color of question on hover */
+.question:hover {
+	background-color: #ececec;
+}
+
+/* change size of logo in the navbar */
+.navbar-brand {
+	width: 10%;
+	padding: 0 !important;
+	margin: 0 !important;
 }

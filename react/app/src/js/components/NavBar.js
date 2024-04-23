@@ -25,9 +25,9 @@ export function NavBar() {
 		<>
 			{/* user BrowserRouter to capture Links to other pages */}
 			<BrowserRouter>
-				<nav className="navbar navbar-expand-lg navbar-light bg-light">
+				<nav className="navbar navbar-expand-lg navbar-dark bg-ww-dark w-100">
 					<Link className="nav-link navbar-brand ps-2" to={"/"}>
-						<img src={logo} className="img-fluid" lt="Weld WISE" />
+						<img src={logo} className="img-fluid" alt="Weld WISE" />
 					</Link>
 					<button
 						className="navbar-toggler"
@@ -77,19 +77,24 @@ export function NavBar() {
 					</div>
 				</nav>
 
-				{/* navbar routes with paths from BrowserRouter's Links */}
-				<Routes>
-					<Route path="/" element={<Home />} />
-					<Route path="/faq" element={<Faq />} />
-					<Route
-						path="/test"
-						element={<Test userInfo={userInfo} />}
-					/>
-					<Route path="/user/settings" element={<UserSettings />} />
+				<div className="container">
+					{/* navbar routes with paths from BrowserRouter's Links */}
+					<Routes>
+						<Route path="/" element={<Home />} />
+						<Route path="/faq" element={<Faq />} />
+						<Route
+							path="/test"
+							element={<Test userInfo={userInfo} />}
+						/>
+						<Route
+							path="/user/settings"
+							element={<UserSettings />}
+						/>
 
-					{/* use star to capture all paths not recognized */}
-					<Route path="*" element={<PageNotFound />} />
-				</Routes>
+						{/* use star to capture all paths not recognized */}
+						<Route path="*" element={<PageNotFound />} />
+					</Routes>
+				</div>
 			</BrowserRouter>
 
 			<LoginModal
