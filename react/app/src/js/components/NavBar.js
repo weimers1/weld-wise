@@ -9,10 +9,10 @@ import PageNotFound from "../pages/PageNotFound";
 import LoginOptions from "./LoginOptions";
 import LoginModal from "./LoginModal";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { useState } from "react";
 
 // inserts
 import logo from "../../images/weld-wise.png";
-import { useState } from "react";
 
 export function NavBar() {
 	const [userInfo, setUserInfo] = useState({
@@ -25,7 +25,7 @@ export function NavBar() {
 		<>
 			{/* user BrowserRouter to capture Links to other pages */}
 			<BrowserRouter>
-				<nav className="navbar navbar-expand-lg navbar-dark bg-ww-dark w-100">
+				<nav className="navbar navbar-expand-lg navbar-dark bg-ww-dark w-100 shadow">
 					<Link className="nav-link navbar-brand ps-2" to={"/"}>
 						<img src={logo} className="img-fluid" alt="Weld WISE" />
 					</Link>
@@ -34,9 +34,6 @@ export function NavBar() {
 						type="button"
 						data-bs-toggle="collapse"
 						data-bs-target="#navbarSupportedContent"
-						aria-controls="navbarSupportedContent"
-						aria-expanded="false"
-						aria-label="Toggle navigation"
 					>
 						<span className="navbar-toggler-icon"></span>
 					</button>
@@ -64,6 +61,20 @@ export function NavBar() {
 							</li>
 						</ul>
 						<ul className="navbar-nav ms-auto">
+							{userInfo.loggedIn ? (
+								<li className="nav-item">
+									<Link
+										className="dropdown-item"
+										to={"/user/settings"}
+									>
+										<span className="badge bg-ww-orange mt-2 me-2 shadow-sm">
+											Logged In: {userInfo.name}
+										</span>
+									</Link>
+								</li>
+							) : (
+								<></>
+							)}
 							<LoginOptions
 								clickedLogOut={() => {
 									setUserInfo({

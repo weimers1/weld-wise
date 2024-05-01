@@ -1,0 +1,37 @@
+/* custom colors */
+#user-settings * .nav-link.active,
+#user-settings * .nav-link:hover {
+	background-color: white;
+	border-color: white;
+	color: #7f7f7f !important;
+}
+
+#user-settings *.nav-link.active {
+	color: #494949 !important;
+	font-weight: bold;
+}
+
+#user-settings *.nav-link.active > .bi {
+	color: #55a3f1;
+}
+
+#user-settings *.nav-link {
+	color: #aaaaaa !important;
+}
+
+/* base height for settings box */
+#user-settings {
+	min-height: 500px;
+}
+
+/* change css when window is smaller (i.e. tablet or phone) */
+@media (max-width: 992px) {
+	/* change menu location */
+	.card-body > .d-flex {
+		display: block !important;
+	}
+
+	.flex-column > .nav-link {
+		text-align: left !important;
+	}
+}

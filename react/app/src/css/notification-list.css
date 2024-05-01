@@ -1,0 +1,63 @@
+/* shorten text if it goes too long */
+.notification-message,
+.notification-title {
+	max-width: 300px !important;
+	text-overflow: ellipsis !important;
+}
+
+/* give border to top and bottom of row */
+#notification-list tr {
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+}
+
+/* change css when window is smaller (i.e. tablet or phone) */
+@media (max-width: 992px) {
+	/* shorten text on smaller screens and spread things down */
+	.notification-message,
+	.notification-title {
+		max-width: 600px !important;
+		display: block !important;
+		text-overflow: ellipsis !important;
+	}
+
+	/* fix background of tr on hover */
+	#notification-list tr:hover {
+		background-color: rgba(0, 0, 0, 0.075);
+	}
+
+	/* bring everything closer together */
+	.notification-title {
+		padding-bottom: 0 !important;
+	}
+
+	.notification-message {
+		padding-top: 0 !important;
+	}
+
+	/* change notification list because bootstrap adds weird stuff */
+	#notification-list .table > :not(caption) > * > * {
+		border: none !important;
+	}
+}
+
+@media (max-width: 770px) {
+	.notification-message,
+	.notification-title {
+		max-width: 400px !important;
+	}
+}
+
+@media (max-width: 500px) {
+	.notification-message,
+	.notification-title {
+		max-width: 250px !important;
+	}
+}
+
+@media (max-width: 350px) {
+	.notification-message,
+	.notification-title {
+		max-width: 200px !important;
+	}
+}

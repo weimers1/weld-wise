@@ -1,3 +1,13 @@
+/* match the font on the weld-wise.com site */
+@font-face {
+	font-family: "Lato";
+	src: local("Lato"),
+		url(../../fonts/Lato/Lato-Regular.ttf) format("truetype");
+}
+body > * {
+	font-family: Lato, arial, sans-serif;
+}
+
 /* custom colors */
 .bg-ww-dark {
 	background-color: #1a60a7 !important;
@@ -45,6 +55,7 @@
 /* change size of logo in the navbar */
 .navbar-brand {
 	width: 10%;
+	min-width: 100px;
 	padding: 0 !important;
 	margin: 0 !important;
 }

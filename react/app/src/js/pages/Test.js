@@ -4,7 +4,7 @@ import Question from "../components/Question";
 export function Test({ userInfo }) {
 	if (!userInfo.loggedIn) {
 		return (
-			<div className="alert alert-info pt-4">
+			<div className="alert alert-info mt-4 shadow">
 				You must be logged in to access the test.
 			</div>
 		);
@@ -18,7 +18,7 @@ export function Test({ userInfo }) {
 
 			<div className="row float-end">
 				<div className="col-xs-12">
-					<div className="btn-group">
+					<div className="btn-group shadow-sm">
 						<button type="button" className="btn btn-ww">
 							Previous
 						</button>

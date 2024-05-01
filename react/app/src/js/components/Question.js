@@ -52,7 +52,7 @@ export function Question() {
 			</div>
 			<div className="row pb-4">
 				<div className="col-xs-12">
-					<ul className="list-group list-unstyled">
+					<ul className="list-group list-unstyled shadow-sm">
 						{getAnswerChoices()}
 					</ul>
 				</div>

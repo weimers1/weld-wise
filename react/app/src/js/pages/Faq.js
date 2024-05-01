@@ -19,11 +19,14 @@ const questions = [
 export function Faq() {
 	return (
 		<>
-			<h4 className="pt-2">Frequently Asked Questions</h4>
-			<ul className="list-unstyled pt-2 text-dark">
+			<h4 className="pt-3">Frequently Asked Questions</h4>
+			<ul className="list-unstyled text-dark">
 				{questions.map((question) => {
 					return (
-						<li className="list-group-item" key={question.id}>
+						<li
+							className="list-group-item pt-3 shadow"
+							key={question.id}
+						>
 							<div className="card">
 								<div
 									className="card-header bg-light-grey border-light-grey"
@@ -37,7 +40,7 @@ export function Faq() {
 									className="collapse"
 									id={"answer-" + question.id}
 								>
-									<div className="card-body">
+									<div className="card-body p-3">
 										{question.answer}
 									</div>
 								</div>

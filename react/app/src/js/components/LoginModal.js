@@ -5,15 +5,14 @@ export function LoginModal(props) {
 
 	return (
 		<div className="modal" id="login-modal">
-			<div className="modal-dialog">
-				<div className="modal-content">
+			<div className="modal-dialog shadow">
+				<div className="modal-content border-ww-dark">
 					<div className="modal-header bg-ww-dark border-ww-dark">
 						<h5 className="modal-title">Log In</h5>
 						<button
 							type="button"
 							className="btn-close"
 							data-bs-dismiss="modal"
-							aria-label="Close"
 						></button>
 					</div>
 					<div className="modal-body bg-ww-light">
@@ -24,7 +23,7 @@ export function LoginModal(props) {
 									type="text"
 									id="username"
 									name="username"
-									className="form-control"
+									className="form-control shadow-sm"
 								/>
 							</div>
 						</div>
@@ -35,7 +34,7 @@ export function LoginModal(props) {
 									type={showPassword ? "text" : "password"}
 									id="password"
 									name="password"
-									className="form-control"
+									className="form-control shadow-sm"
 								/>
 							</div>
 						</div>
@@ -45,6 +44,8 @@ export function LoginModal(props) {
 									<input
 										type="checkbox"
 										id="show-password"
+										className="shadow-sm"
+										style={{ accentColor: "#e06227" }}
 										onClick={() => {
 											setShowPassword(!showPassword);
 										}}
@@ -57,7 +58,7 @@ export function LoginModal(props) {
 					<div className="modal-footer bg-ww-dark border-ww-dark">
 						<button
 							type="button"
-							className="btn btn-danger"
+							className="btn btn-danger shadow-sm"
 							data-bs-dismiss="modal"
 							onClick={() => {
 								clearFields();
@@ -68,7 +69,7 @@ export function LoginModal(props) {
 						</button>
 						<button
 							type="button"
-							className="btn btn-success"
+							className="btn btn-success shadow-sm"
 							data-bs-dismiss="modal"
 							onClick={() => {
 								props.clickedLogIn();

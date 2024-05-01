@@ -18,10 +18,7 @@ export function LoginOptions(props) {
 				>
 					<i className="bi bi-person-fill"></i> Profile
 				</a>
-				<ul
-					className="dropdown-menu dropdown-menu-end"
-					aria-labelledby="navbarDropdown"
-				>
+				<ul className="dropdown-menu dropdown-menu-end shadow">
 					<li>
 						<Link className="dropdown-item" to={"/user/settings"}>
 							<i className="bi bi-gear-fill"></i> Settings
