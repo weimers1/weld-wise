@@ -10,11 +10,15 @@ body > * {
 
 /* custom colors */
 .bg-ww-dark {
-	background-color: #1a60a7 !important;
+	background-color: #145aa0 !important;
+}
+
+.text-ww-dark {
+	color: #145aa0 !important;
 }
 
 .border-ww-dark {
-	border-color: #1a60a7 !important;
+	border-color: #145aa0 !important;
 }
 
 .bg-light-grey {
@@ -33,23 +37,57 @@ body > * {
 	background-color: #e06227 !important;
 }
 
-.btn-ww {
-	background-color: #1a60a7 !important;
-	border-color: #1a60a7 !important;
+.btn-ww-dark {
+	border-color: #2c6cac !important;
 	color: #ffffff !important;
+	background: linear-gradient(#2c6cac, #0d3e6e);
 }
 
-.btn-ww:hover,
-.btn-ww:active,
-.btn-ww:visited {
-	background-color: #144d86 !important;
-	border-color: #144d86 !important;
+.btn-ww-dark:hover,
+.btn-ww-dark:active,
+.btn-ww-dark:visited {
+	border-color: #26619b !important;
 	color: #ffffff;
+	background: linear-gradient(#26619b, #052646);
 }
 
-/* change color of question on hover */
-.question:hover {
-	background-color: #ececec;
+.btn-ww-light {
+	border-color: #59a4f0 !important;
+	color: #ffffff !important;
+	background: linear-gradient(#66adf5, #3272b3);
+}
+
+.btn-ww-light:hover,
+.btn-ww-light:active,
+.btn-ww-light:visited {
+	color: #ffffff;
+	background: linear-gradient(#4b96e0, #195591);
+}
+
+/* override bootstrap colors */
+.form-check-input:checked {
+	background-color: #145aa0 !important;
+	border-color: #145aa0 !important;
+}
+
+.btn-danger {
+	border-color: #b42432 !important;
+	background: linear-gradient(#e63e4f, #b42432);
+}
+
+.btn-danger:hover {
+	border-color: #970a18 !important;
+	background: linear-gradient(#d43d4c, #970a18);
+}
+
+.btn-success {
+	border-color: #198754;
+	background: linear-gradient(#28b171, #198754);
+}
+
+.btn-success:hover {
+	border-color: #198754;
+	background: linear-gradient(#239b63, #0f7043);
 }
 
 /* change size of logo in the navbar */
@@ -58,4 +96,21 @@ body > * {
 	min-width: 100px;
 	padding: 0 !important;
 	margin: 0 !important;
+}
+
+/* custom sizing */
+.lg-w-50 {
+	width: 50%;
+}
+
+/* change css when window is smaller (i.e. tablet or phone) */
+@media (max-width: 992px) {
+	/* custom sizing */
+	.lg-w-50 {
+		width: 100%;
+	}
+
+	.mb-small-screens {
+		margin-bottom: 8px;
+	}
 }

@@ -1,8 +1,8 @@
 /* custom colors */
 #user-settings * .nav-link.active,
 #user-settings * .nav-link:hover {
-	background-color: white;
-	border-color: white;
+	background-color: #ffffff;
+	border-color: #ffffff;
 	color: #7f7f7f !important;
 }
 
@@ -19,9 +19,20 @@
 	color: #aaaaaa !important;
 }
 
+/* override bootstrap colors */
+.form-check-input:checked {
+	background-color: #145aa0 !important;
+	border-color: #145aa0 !important;
+}
+
 /* base height for settings box */
 #user-settings {
 	min-height: 500px;
+}
+
+/* prevent textarea from changing size */
+textarea {
+	resize: none !important;
 }
 
 /* change css when window is smaller (i.e. tablet or phone) */

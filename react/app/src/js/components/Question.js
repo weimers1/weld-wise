@@ -1,3 +1,6 @@
+// styles
+import "../../css/question.css";
+
 const questionData = {
 	id: 1,
 	text: "Test question text",
@@ -35,7 +38,9 @@ function getAnswerChoices() {
 						id={"option-" + answerChoice.id}
 						name="test-question"
 						value={answerChoice.id}
-						onClick={handleClick}
+						onClick={(event) => {
+							handleClick(event);
+						}}
 					/>
 					&nbsp;{answerChoice.text}
 				</li>

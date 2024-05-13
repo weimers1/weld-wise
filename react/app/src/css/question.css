@@ -1,0 +1,8 @@
+/* change color of question on hover */
+.question:hover {
+	background-color: #ececec;
+}
+
+input[type="radio"] {
+	accent-color: #145aa0;
+}

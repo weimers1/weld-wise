@@ -7,7 +7,7 @@ import PageNotFound from "../pages/PageNotFound";
 
 // components
 import LoginOptions from "./LoginOptions";
-import LoginModal from "./LoginModal";
+import LoginModal from "./modals/LoginModal";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { useState } from "react";
 
@@ -76,13 +76,13 @@ export function NavBar() {
 								<></>
 							)}
 							<LoginOptions
+								userInfo={userInfo}
 								clickedLogOut={() => {
 									setUserInfo({
 										...userInfo,
 										loggedIn: false,
 									});
 								}}
-								userInfo={userInfo}
 							/>
 						</ul>
 					</div>

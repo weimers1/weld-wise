@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 
-export function LoginOptions(props) {
+export function LoginOptions({ userInfo, clickedLogOut }) {
 	return (
 		<>
 			<li
 				className={
 					"nav-item dropdown pe-2 " +
-					(props.userInfo.loggedIn ? "" : "d-none")
+					(userInfo.loggedIn ? "" : "d-none")
 				}
 			>
 				<a
@@ -28,7 +28,9 @@ export function LoginOptions(props) {
 						<a
 							className="dropdown-item"
 							role="button"
-							onClick={props.clickedLogOut}
+							onClick={() => {
+								clickedLogOut();
+							}}
 						>
 							<i className="bi bi-box-arrow-right"></i> Log Out
 						</a>
@@ -38,7 +40,7 @@ export function LoginOptions(props) {
 			<li
 				className={
 					"nav-item dropdown pe-2 " +
-					(!props.userInfo.loggedIn ? "" : "d-none")
+					(!userInfo.loggedIn ? "" : "d-none")
 				}
 			>
 				<a

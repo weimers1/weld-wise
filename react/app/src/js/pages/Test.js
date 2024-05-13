@@ -19,11 +19,12 @@ export function Test({ userInfo }) {
 			<div className="row float-end">
 				<div className="col-xs-12">
 					<div className="btn-group shadow-sm">
-						<button type="button" className="btn btn-ww">
+						<button type="button" className="btn btn-ww-dark">
+							<i className="bi bi-chevron-compact-left"></i>{" "}
 							Previous
 						</button>
-						<button type="button" className="btn btn-ww">
-							Next
+						<button type="button" className="btn btn-ww-dark">
+							Next <i className="bi bi-chevron-compact-right"></i>
 						</button>
 					</div>
 				</div>

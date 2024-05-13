@@ -24,6 +24,7 @@ export function LoginModal(props) {
 									id="username"
 									name="username"
 									className="form-control shadow-sm"
+									autoComplete="username"
 								/>
 							</div>
 						</div>
@@ -65,7 +66,7 @@ export function LoginModal(props) {
 								setShowPassword(false);
 							}}
 						>
-							Close
+							<i className="bi bi-x-lg"></i> Close
 						</button>
 						<button
 							type="button"
@@ -77,7 +78,7 @@ export function LoginModal(props) {
 								setShowPassword(false);
 							}}
 						>
-							Login
+							<i className="bi bi-person-check-fill"></i> Login
 						</button>
 					</div>
 				</div>
