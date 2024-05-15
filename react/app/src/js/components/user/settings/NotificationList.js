@@ -133,6 +133,7 @@ export function NotificationList() {
 										<i className="bi bi-trash-fill text-ww-dark"></i>
 									</a>
 								</th>
+								<th></th>
 							</tr>
 						</thead>
 						<tbody>

@@ -64,6 +64,19 @@ body > * {
 	background: linear-gradient(#4b96e0, #195591);
 }
 
+.btn-ww-orange {
+	border-color: #c94b11 !important;
+	color: #ffffff !important;
+	background: linear-gradient(#ec7e4b, #c94b11);
+}
+
+.btn-ww-orange:hover,
+.btn-ww-orange:active,
+.btn-ww-orange:visited {
+	color: #ffffff;
+	background: linear-gradient(#dd5f24, #b63b03);
+}
+
 /* override bootstrap colors */
 .form-check-input:checked {
 	background-color: #145aa0 !important;
@@ -98,9 +111,20 @@ body > * {
 	margin: 0 !important;
 }
 
+/* remove underline */
+.no-underline {
+	text-decoration: none;
+}
+
 /* custom sizing */
 .lg-w-50 {
 	width: 50%;
+}
+
+.test-list {
+	max-height: 250px;
+	min-height: 250px;
+	overflow-y: auto;
 }
 
 /* change css when window is smaller (i.e. tablet or phone) */

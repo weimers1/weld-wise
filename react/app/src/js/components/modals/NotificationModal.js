@@ -1,6 +1,6 @@
 export function NotificationModal({ notification }) {
 	return (
-		<div className="modal" id="notification-modal">
+		<div className="modal text-black" id="notification-modal">
 			<div className="modal-dialog modal-xl shadow">
 				<div className="modal-content">
 					<div className="modal-header row">

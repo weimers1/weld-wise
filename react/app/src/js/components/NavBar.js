@@ -91,7 +91,10 @@ export function NavBar() {
 				<div className="container">
 					{/* navbar routes with paths from BrowserRouter's Links */}
 					<Routes>
-						<Route path="/" element={<Home />} />
+						<Route
+							path="/"
+							element={<Home userInfo={userInfo} />}
+						/>
 						<Route path="/faq" element={<Faq />} />
 						<Route
 							path="/test"
