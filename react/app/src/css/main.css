@@ -127,6 +127,26 @@ body > * {
 	overflow-y: auto;
 }
 
+/* round scrollbar */
+::-webkit-scrollbar {
+	width: 12px;
+	height: 12px;
+}
+
+::-webkit-scrollbar-track {
+	background: #f5f5f5;
+	border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	background: #ccc;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #999;
+}
+
 /* change css when window is smaller (i.e. tablet or phone) */
 @media (max-width: 992px) {
 	/* custom sizing */

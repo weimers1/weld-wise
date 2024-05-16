@@ -30,6 +30,50 @@ export function NotificationList() {
 				"This is another test notification also with a really long text to test the cutoff on long text and small screens",
 			datetime: "04/20/2024 11:30 AM",
 		},
+		{
+			id: 4,
+			read: false,
+			title: "New Notification",
+			message: "This is your new notification",
+			datetime: "05/01/2024 12:05 PM",
+		},
+		{
+			id: 5,
+			read: true,
+			title: "Test notification",
+			message: "This is a test notification",
+			datetime: "05/01/2024 11:05 AM",
+		},
+		{
+			id: 6,
+			read: true,
+			title: "Test Notification 2 with a longer title to test the ellipses cutoff on long text and smaller screens",
+			message:
+				"This is another test notification also with a really long text to test the cutoff on long text and small screens",
+			datetime: "04/20/2024 11:30 AM",
+		},
+		{
+			id: 7,
+			read: true,
+			title: "New Notification",
+			message: "This is your new notification",
+			datetime: "05/01/2024 12:05 PM",
+		},
+		{
+			id: 8,
+			read: true,
+			title: "Test notification",
+			message: "This is a test notification",
+			datetime: "05/01/2024 11:05 AM",
+		},
+		{
+			id: 9,
+			read: false,
+			title: "Test Notification 2 with a longer title to test the ellipses cutoff on long text and smaller screens",
+			message:
+				"This is another test notification also with a really long text to test the cutoff on long text and small screens",
+			datetime: "04/20/2024 11:30 AM",
+		},
 	]);
 
 	// set the indeterminate flag for the #check-all checkbox
@@ -106,10 +150,10 @@ export function NotificationList() {
 		<>
 			<div className="row pb-4">
 				<div className="col-12" id="notification-list">
-					<table className="table">
+					<table className="table table-borderless bg-white rounded shadow">
 						<thead>
 							<tr>
-								<th colSpan={2}>
+								<th colSpan={3} className="rounded">
 									<input
 										type="checkbox"
 										className="form-check-input"
@@ -133,10 +177,9 @@ export function NotificationList() {
 										<i className="bi bi-trash-fill text-ww-dark"></i>
 									</a>
 								</th>
-								<th></th>
 							</tr>
 						</thead>
-						<tbody>
+						<tbody className="rounded">
 							{notifications.map((notification) => {
 								return (
 									<tr
@@ -148,7 +191,7 @@ export function NotificationList() {
 												: " bg-light-blue fw-bold")
 										}
 									>
-										<td width={"5%"}>
+										<td width={"3.5%"}>
 											<input
 												type="checkbox"
 												className="form-check-input notification-checkbox"

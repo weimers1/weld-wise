@@ -5,9 +5,15 @@
 	text-overflow: ellipsis !important;
 }
 
-/* give border to top and bottom of row */
-#notification-list tr {
-	border-top-width: 1px;
+/* add a bottom to the table to allow for a rounded border */
+#notification-list tbody {
+	padding-bottom: 5px !important;
+	display: grid;
+}
+
+/* give border to bottom of each row */
+#notification-list tr,
+thead tr {
 	border-bottom-width: 1px;
 }
 
@@ -33,6 +39,21 @@
 	cursor: pointer;
 }
 
+/* set max height of notification list */
+#notification-list > table > tbody {
+	max-height: 308px !important;
+	overflow-y: scroll !important;
+}
+
+/* notification modal */
+#notification-modal .modal-content {
+	min-height: 35vh;
+}
+
+#notification-modal .modal-title {
+	font-size: calc(1.2rem);
+}
+
 /* change css when window is smaller (i.e. tablet or phone) */
 @media (max-width: 992px) {
 	/* shorten text on smaller screens and spread things down */
@@ -56,19 +77,41 @@
 	#notification-list .table > :not(caption) > * > * {
 		border: none !important;
 	}
+
+	/* notification modal height on smaller screens */
+	#notification-modal .modal-content {
+		min-height: 60vh;
+	}
+
+	/* needed for rounded bottom border on smaller screens */
+	#notification-list tbody {
+		display: block;
+	}
 }
 
 @media (max-width: 770px) {
+	/* shorten text on smaller screens and spread things down */
 	.notification-message,
 	.notification-title {
 		max-width: 400px !important;
 	}
+
+	/* notification modal height on smaller screens */
+	#notification-modal .modal-content {
+		min-height: 75vh;
+	}
 }
 
 @media (max-width: 500px) {
+	/* shorten text on smaller screens and spread things down */
 	.notification-message,
 	.notification-title {
 		max-width: 250px !important;
+	}
+
+	/* notification modal height on smaller screens */
+	#notification-modal .modal-content {
+		min-height: 97vh;
 	}
 }
 
@@ -77,9 +120,4 @@
 	.notification-title {
 		max-width: 200px !important;
 	}
-}
-
-/* notification modal */
-#notification-modal .modal-content {
-	height: 35vh;
 }

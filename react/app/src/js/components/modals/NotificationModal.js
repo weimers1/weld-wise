@@ -3,7 +3,7 @@ export function NotificationModal({ notification }) {
 		<div className="modal text-black" id="notification-modal">
 			<div className="modal-dialog modal-xl shadow">
 				<div className="modal-content">
-					<div className="modal-header row">
+					<div className="modal-header">
 						<div className="col-8">
 							<h5 className="modal-title">
 								{notification.title}
