@@ -25,15 +25,15 @@ export function LoginOptions({ userInfo, clickedLogOut }) {
 						</Link>
 					</li>
 					<li>
-						<a
+						<Link
 							className="dropdown-item"
-							role="button"
+							to={"/"}
 							onClick={() => {
 								clickedLogOut();
 							}}
 						>
 							<i className="bi bi-box-arrow-right"></i> Log Out
-						</a>
+						</Link>
 					</li>
 				</ul>
 			</li>

@@ -41,7 +41,7 @@ thead tr {
 
 /* set max height of notification list */
 #notification-list > table > tbody {
-	max-height: 308px !important;
+	max-height: 270px !important;
 	overflow-y: scroll !important;
 }
 

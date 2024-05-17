@@ -158,3 +158,24 @@ body > * {
 		margin-bottom: 8px;
 	}
 }
+
+/* sign in tabs colors */
+#sign-in-tabs .nav-link {
+	background-color: #ececec;
+	color: #7f7f7f;
+	cursor: pointer;
+}
+
+#sign-in-tabs .nav-link.active {
+	background-color: #ec7e4b;
+	color: #ffffff;
+}
+
+#sign-in {
+	height: 480px;
+}
+
+/* custom cursor class */
+.cursor-pointer {
+	cursor: pointer;
+}

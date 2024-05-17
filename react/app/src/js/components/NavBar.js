@@ -13,10 +13,11 @@ import { useState } from "react";
 
 // inserts
 import logo from "../../images/weld-wise.png";
+import SignIn from "./SignIn";
 
 export function NavBar() {
 	const [userInfo, setUserInfo] = useState({
-		loggedIn: true, // later change to check login status server side
+		loggedIn: false, // later change to check login status server side
 		name: "Sam Weimer",
 		userId: 123,
 	});
@@ -53,12 +54,16 @@ export function NavBar() {
 									FAQ
 								</Link>
 							</li>
-							<li className="nav-item">
-								<Link className="nav-link" to={"/test"}>
-									<i className="bi bi-clipboard-check-fill"></i>{" "}
-									Test
-								</Link>
-							</li>
+							{userInfo.loggedIn ? (
+								<li className="nav-item">
+									<Link className="nav-link" to={"/test"}>
+										<i className="bi bi-clipboard-check-fill"></i>{" "}
+										Test
+									</Link>
+								</li>
+							) : (
+								<></>
+							)}
 						</ul>
 						<ul className="navbar-nav ms-auto">
 							{userInfo.loggedIn ? (
@@ -93,13 +98,30 @@ export function NavBar() {
 					<Routes>
 						<Route
 							path="/"
-							element={<Home userInfo={userInfo} />}
+							element={
+								userInfo.loggedIn ? (
+									<Home userInfo={userInfo} />
+								) : (
+									<SignIn
+										setUserInfo={(newUserInfo) => {
+											setUserInfo({
+												...userInfo,
+												...newUserInfo,
+											});
+										}}
+									/>
+								)
+							}
 						/>
 						<Route path="/faq" element={<Faq />} />
-						<Route
-							path="/test"
-							element={<Test userInfo={userInfo} />}
-						/>
+						{userInfo.loggedIn ? (
+							<Route
+								path="/test"
+								element={<Test userInfo={userInfo} />}
+							/>
+						) : (
+							<></>
+						)}
 						<Route
 							path="/user/settings"
 							element={<UserSettings />}
