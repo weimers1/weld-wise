@@ -13,7 +13,7 @@ import { useState } from "react";
 
 // inserts
 import logo from "../../images/weld-wise.png";
-import SignIn from "./SignIn";
+import SignIn from "../pages/SignIn";
 
 export function NavBar() {
 	const [userInfo, setUserInfo] = useState({

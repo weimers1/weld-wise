@@ -13,7 +13,7 @@ export function SignIn({ setUserInfo }) {
 					Welcome to the Weld WISE Testing Site
 				</h4>
 				<div className="col-lg-6 col-12">
-					<div className="card p-4 mb-4" id="sign-in">
+					<div className="card p-4 mb-4 shadow" id="sign-in">
 						<div className="card-body">
 							<ul
 								className="nav nav-pills nav-justified pb-4"
@@ -164,8 +164,8 @@ export function SignIn({ setUserInfo }) {
 											});
 										}}
 									>
-										<i className="bi bi-person-fill"></i>{" "}
-										Log In
+										<i className="bi bi-person-check-fill"></i>{" "}
+										&nbsp;Log In
 									</button>
 								</div>
 							</div>
